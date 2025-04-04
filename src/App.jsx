@@ -2,22 +2,22 @@ import{ useState} from 'react'
 
 import'./App.css'
 
-import AnimalsShow from './AnimalsShow'
+import AnimalsShow from './AnimalsShow.jsx'
 
-function getRamdonAnimal() {
+function getRandomAnimal() {
   const animals = ['cat', 'bird', 'dog', 'gator', 'horse']
 
-  return animals[Math.floor(Math.ramdon() * animals.length)]
+  return animals[Math.floor(Math.random() * animals.length)]
 
 }
 
-console.log(getRamdonAnimal())
+console.log(getRandomAnimal())
 
 function App() {
   const [animals, setAnimals] = useState([])
 
   const handleClick = () => {
-    setAnimals ([...animals, getRamdonAnimal()])
+    setAnimals ([...animals, getRandomAnimal()])
   }
   const renderAnimals = animals.map((animal, index)=>{
     return <AnimalsShow type={animal} key = {index}/>
@@ -26,8 +26,9 @@ function App() {
   return (
 
     <div className='app'>
-      <button onClick={handleClick}>Add Animmal</button>
-    <div className='animal-list'>
+      <button onClick={handleClick}>Add Animal</button>
+    <div className='animals-list'>
+      {renderAnimals}
 
     </div>
     </div>

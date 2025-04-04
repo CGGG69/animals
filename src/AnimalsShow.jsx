@@ -1,16 +1,16 @@
 import { useState } from "react";
 
-import bird from 'src/assets/svg/bird.svg'
-import dog from 'src/assets/svg/dog.svg'
-import cat from 'src/assets/svg/cat.svg'
-import cow from 'src/assets/svg/cow.svg'
-import gator from 'src/assets/svg/gator.svg'
-import heart from 'src/assets/svg/heart.svg'
-import horse from 'src/assets/svg/horse.svg'
+import bird from './assets/svg/bird.svg'
+import dog from './assets/svg/dog.svg'
+import cat from './assets/svg/cat.svg'
+import cow from './assets/svg/cow.svg'
+import gator from './assets/svg/gator.svg'
+import heart from './assets/svg/heart.svg'
+import horse from './assets/svg/horse.svg'
 
-import 'src/AnimalsShow.css'
+import './AnimalsShow.css'
 
-const svMap = {
+const svgMap = {
     bird,
     dog,
     cat,
@@ -20,10 +20,10 @@ const svMap = {
 }
 
 function AnimalsShow({type}){
-    const [click, steClick] = useState(0)
+    const [clicks, setClicks] = useState(0)
 
     const handleClick = () => {
-        steClicks(clicks + 1)
+        setClicks(clicks + 1)
     }
     return(
         <div
@@ -31,7 +31,7 @@ function AnimalsShow({type}){
             className="animal-show"
         >
             <img
-                src={svMap[type]}
+                src={svgMap[type]}
                 alt="animal"
                 className="animal"
         />
